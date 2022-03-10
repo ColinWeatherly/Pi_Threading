@@ -1,4 +1,10 @@
-﻿using System;
+﻿/* Name: Colin Weatherly
+ * Date: 3/10/2022
+ * File: FindPiThread.cs
+ * IDE: Visual Studio 2019
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,16 +27,23 @@ namespace Pi_Threading
 
         public void ThrowDarts()
         {
+            double x;
+            double y;
+
             for (int i = 0; i < DartNumber; i++)
             {
-                double x = rand.NextDouble();
-                double y = rand.NextDouble();
+                x = rand.NextDouble();
+                y = rand.NextDouble();
 
-                if ((x * x) + (y * y) >= 1)
+                if ((x * x) + (y * y) <= 1.0)
                 {
                     BoardHits++;
                 }
             }          
+        }
+        public int GetHits
+        {
+            get => BoardHits;
         }
     }
 }
