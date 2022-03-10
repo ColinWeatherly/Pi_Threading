@@ -48,7 +48,7 @@ namespace Pi_Threading
                 InsideDarts += PiList[i].GetHits;
             }
 
-            double PiEstimate = (((double)InsideDarts) / NumThrows);
+            double PiEstimate = (4 * (Convert.ToDouble(InsideDarts)) / (NumThreads * NumThrows));
             Console.WriteLine("The Pi Estimate is " + PiEstimate);
             Console.ReadKey();
         }
